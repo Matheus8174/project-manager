@@ -3,13 +3,13 @@
   "host": "localhost",
   "port": 5432,
   "username": "postgres",
-  "password": "postgres",
-  "database": "db_project_manager",
+  "password": "admin",
+  "database": "project-manager",
   "entities": [
     "./src/models/*.ts"
   ],
   "migrations": [
-    "./src/database/migration/*.ts"
+    "./src/database/migrations/*.ts"
   ],
   "cli": {
     "entitiesDir": "./src/models",
