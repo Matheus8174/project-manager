@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "author": {
+    "email": "souzamatheus8174@gmail.com",
+    "name": "Matheus Araújo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Matheus8174/project-manager.git"
+  },
   "scripts": {
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
