@@ -31,6 +31,10 @@ class SessionService {
 
     const passwordCompare = await compare(password, user.password);
 
+    if (!user.active) {
+      throw new AppError('Usuário inativo', 401);
+    }
+
     if (!passwordCompare) {
       throw new AppError('Credenciais inválidas', 401);
     }
