@@ -1,8 +1,10 @@
 import { Request, Response } from 'express';
 import UserRepository from '../repositories/UserRepository';
 import CreateUserService from '../service/CreateUserService';
+import EnableUserService from '../service/EnableUserService';
 
 interface RequestBody {
+  id: string;
   name: string;
   email: string;
   password?: any;
@@ -19,6 +21,21 @@ class UserController {
       name,
       email,
       password
+    });
+
+    delete user.password;
+
+    return response.json(user);
+  }
+
+  public async enable(request: Request, response: Response): Promise<Response> {
+    const { id }: RequestBody = request.params;
+
+    const userRepository = new UserRepository();
+    const enableUser = new EnableUserService(userRepository);
+
+    const user = await enableUser.execute({
+      id
     });
 
     delete user.password;
